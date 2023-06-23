@@ -8,8 +8,7 @@ $helm version --client
 
 add the Helm Stable Charts for your local client
 $helm repo add stable https://charts.helm.sh/stable
-$helm repo add prometheus-community
-https://prometheus-community.github.io/helm-charts
+$helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 
 Create Prometheus namespace
 $kubectl create namespace prometheus
@@ -28,5 +27,7 @@ $kubectl edit svc stable-kube-prometheus-sta-prometheus -n prometheus
 Edit Grafana Service
 $kubectl edit svc stable-grafana -n prometheus
 $kubectl get svc -n prometheus
+userName: admin
+Password: prom-operator
 
 
