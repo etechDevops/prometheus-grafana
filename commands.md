@@ -38,7 +38,7 @@ helm repo update
 
 ## install chart
 ```
-helm install mongodb-exporter prometheus-community/prometheus-mongodb-exporter -n prometheus
+helm install mongodb-exporter prometheus-community/prometheus-mongodb-exporter  -f values.yaml -n prometheus
 ```
 
 
