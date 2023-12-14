@@ -43,7 +43,9 @@ scrape it's endpoint
 ```
 kubectl port-forward service/mongodb-exporter-prometheus-mongodb-exporter 9216 -n prometheus
 ``` 
-
+```
+kubectl port-forward svc/prometheus-kube-prometheus-alertmanager 9093
+```
 
 ## Grafana Dashboard credentials
 
