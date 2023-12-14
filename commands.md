@@ -42,7 +42,8 @@ and run the command below to forward the port so that prometheus will discover t
 scrape it's endpoint
 ```
 kubectl port-forward service/mongodb-exporter-prometheus-mongodb-exporter 9216 -n prometheus
-``` 
+```
+Alert manager UI
 ```
 kubectl port-forward svc/prometheus-kube-prometheus-alertmanager 9093
 ```
