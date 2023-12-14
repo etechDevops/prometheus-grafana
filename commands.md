@@ -1,17 +1,28 @@
-## Install Mongodb-exporter
+## Install Mongodb
+First create mongodb deployment
+```
+kubectl apply -f mongodb.yaml -n prometheus
+```
+```
+kubectl get pod,svc -n prometheus
+```
+Locate Mongodb pod and svc
+
+## Add the repository 
 ```
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 helm repo update
 ```
+helm show values prometheus-community/prometheus-mongodb-exporter (optianal)
 
 ## install chart 
-Install charts with all parameters needed. The chart will take values file as attribute and apply
-the parameters in it.
+Install charts with all parameters needed. the parameters are in the values file. 
+The chart will take values file as attribute and apply the parameters in it.
 
 ```
 helm install mongodb-exporter prometheus-community/prometheus-mongodb-exporter  -f values.yaml -n prometheus
 ```
-Check that the chart has been installed (locaye the `mongo-db-exporter`) 
+Check that the chart has been installed (locate the `mongo-db-exporter`) 
 ```
 helm ls
 ```
