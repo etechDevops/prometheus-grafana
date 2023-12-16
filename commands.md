@@ -20,7 +20,9 @@ Install charts with all parameters needed. the parameters are in the values file
 The chart will take values file as attribute and apply the parameters in it.
 
 ```
-helm install mongodb-exporter prometheus-community/prometheus-mongodb-exporter  -f values.yaml -n prometheus
+#helm install mongodb-exporter prometheus-community/prometheus-mongodb-exporter  -f values.yaml -n prometheus
+helm install mongodb-exporter prometheus-community/prometheus-mongodb-exporter --version 2.8.1 -f values.yaml -n prometheus
+
 ```
 Check that the chart has been installed (locate the `mongo-db-exporter`) 
 ```
