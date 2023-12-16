@@ -13,7 +13,7 @@ $helm repo add prometheus-community https://prometheus-community.github.io/helm-
 
 Create Prometheus namespace
 $kubectl create namespace prometheus
-$helm install stable prometheus-community/kube-prometheus-stack -n prometheus
+$helm install prometheus prometheus-community/kube-prometheus-stack -n prometheus
 
 If you encounter an error, run:
 $curl -L https://git.io/get_helm.sh |
@@ -23,10 +23,11 @@ $kubectl get pods -n prometheus
 $kubectl get svc -n prometheus
 
 Edit Prometheus Service
-$kubectl edit svc stable-kube-prometheus-sta-prometheus -n prometheus
-
-Edit Grafana Service
-$kubectl edit svc stable-grafana -n prometheus
+#kubectl edit svc stable-kube-prometheus-sta-prometheus -n prometheus
+$kubectl edit svc prometheus-kube-prometheus-prometheus -n prometheus
+Edit Grafana service
+#kubectl edit svc stable-grafana -n prometheus
+$kubectl edit svc prometheus-grafana -n prometheus
 $kubectl get svc -n prometheus
 userName: admin
 Password: prom-operator
